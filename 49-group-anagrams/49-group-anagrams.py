@@ -11,3 +11,4 @@ class Solution:
         for i in anagram_dict:
             output.append(anagram_dict[i])
         return output
+    #T.C:O(nlogn)
