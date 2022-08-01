@@ -13,7 +13,7 @@ class Solution(object):
         curr=dummy=ListNode(0)
         for l in lists:
             if l:
-                heapq.heappush(heap,(l.val,l))
+                heap.append((l.val,l))
         while(len(heap)>0):
             heapq.heapify(heap)
             val,node=heap.pop(0)
@@ -21,7 +21,7 @@ class Solution(object):
             curr=curr.next
             node=node.next
             if node:
-                heapq.heappush(heap,(node.val,node))
+                heap.append((node.val,node))
         return dummy.next
             
             
