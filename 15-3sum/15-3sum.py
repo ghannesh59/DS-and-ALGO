@@ -2,7 +2,7 @@
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         nums=sorted(nums)
-        nums.insert(0,2^32)
+        nums.insert(0,2**32)
         res=[]
         for i in range(1,len(nums)-1):
             if nums[i]!=nums[i-1]:
