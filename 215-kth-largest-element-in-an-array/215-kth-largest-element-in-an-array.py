@@ -5,7 +5,7 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        p=random.choice(nums)
+        p=nums[0]
         l=[x for x in nums if x<p]
         m=[x for x in nums if x==p]
         r=[x for x in nums if x>p]
