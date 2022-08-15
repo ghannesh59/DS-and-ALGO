@@ -1,11 +1,17 @@
-class Solution:
-    def findKthLargest(self, nums: List[int], k: int) -> int:
-        heap=[]
-        for i in range(k):
-            heap.append(nums[i])
-        heapq.heapify(heap)
-        for i in range(k,len(nums)):
-            heapq.heappush(heap,nums[i])
-            heapq.heappop(heap)
-        return heap[0]
-        
+class Solution(object):
+    def findKthLargest(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
+        p=random.choice(nums)
+        l=[x for x in nums if x<p]
+        m=[x for x in nums if x==p]
+        r=[x for x in nums if x>p]
+        if k<=len(r):
+            return self.findKthLargest(r,k)
+        elif (k - len(r)) <= len(m):
+            return m[0]
+        else:
+            return self.findKthLargest(l, k - len(r) - len(m))
