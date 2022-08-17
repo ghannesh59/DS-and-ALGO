@@ -3,7 +3,7 @@ class Solution:
         intervals.sort()
         curr=intervals[0]
         result=[]
-        for i in intervals:
+        for i in intervals[1:]:
             if i[0]<=curr[1]:
                 curr[1]=max(curr[1],i[1])
             else:
@@ -11,7 +11,4 @@ class Solution:
                 curr=i
         result.append(curr)
         return result
-                
-                
-                
-        
+            
